@@ -1,3 +1,9 @@
-<h1>Hello, dear</h1>
-<h2>This is my personal website, now I wanna say something to you</h2>
-<h2>happy every day, don't be angry~</h2>
+<%
+dim str
+set fso=server.CreateObject("scripting.filesystemobject")
+set f=fso.OpenTextFile(server.MapPath("1.txt"),1,true)
+str=f.readall
+f.close
+set f=nothing
+Response.Write server.HTMLEncode(str)
+%>
